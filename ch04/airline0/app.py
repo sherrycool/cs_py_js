@@ -9,7 +9,7 @@ app = Flask(__name__)
 engine = create_engine('mysql+mysqlconnector://root:123@localhost:3306/test')
 db = scoped_session(sessionmaker(bind=engine))
 
-@app.route('/'):
+@app.route('/')
 def index():
 	flights = db.execute("SELECT * FROM flights").fetchall()
 	return render_template('index.html', flights=flights)
@@ -23,6 +23,7 @@ def book():
 	try:
 		flight_id = int(request.form.get('flight_id'))
 	except ValueError:
+        x = db.execute("SELECT * FROM passengers where name=:name",{"name":name}).fetchall()
 
 
 if __name__ == "__main__":
