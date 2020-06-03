@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,GAAI;EACH,SAAS,EAAC,IAAI;EAEd,KAAC;IACA,KAAK,EAAC,IAAI;EAEX,MAAE;IACD,KAAK,EAAC,KAAK",
+"sources": ["nesting.scss"],
+"names": [],
+"file": "nesting.css"
+}

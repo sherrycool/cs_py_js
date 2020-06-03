@@ -1,0 +1,18 @@
+import os
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+
+engine = create_engine('mysql+mysqlconnector://root:123@localhost:3306/test')
+#engine = create_engine(os.getenv("DATABASE_URL"))
+db = scoped_session(sessionmaker(bind=engine))
+
+def main():
+	flights = db.execute("SELECT origin, destination, duration from flights").fetchall()
+	print(flights)
+	print(type(flights))
+	for flight in flights:
+		print(f"{flight.origin} to {flight.destination} lasting {flight.duration}")
+
+if __name__ == "__main__":
+	main()

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IS it new year?</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    h1 {
+      color: purple;
+      font-size: 36px;
+    }
+    h2{
+      color: green;
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Is it new year?</h1>
+  {% if is_new_year %}
+    <h2>YES, happy new year!</h2>
+  {% else %}
+    <h2>No!</h2>
+  {% endif %}
+</body>
