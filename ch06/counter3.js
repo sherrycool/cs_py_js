@@ -1,0 +1,16 @@
+//Function to count
+// document 就是网页，addeventlistener 事件监控器，DOMContenttLoaded就是当网页加载完毕的时候，就开始监控事件，监控的时间是找到button被点击的时候，然后就执行count函数
+document.addEventListener('DOMContentLoaded', function(){
+	document.querySelector('button').onclick = count;
+});
+
+let counter = 0;
+
+function count(){
+	counter++;
+	document.querySelector('#counter').innerHTML = counter;
+
+	if (counter % 10 === 0){ 
+		alert(`Counter is at ${counter}`);
+	}
+}

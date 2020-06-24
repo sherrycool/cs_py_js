@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block heading %}
+currency
+{% endblock %}
+{% block body %}
+<form action="{{ url_for('rate') }}" method="post">
+    <input name="tocoin" type="text" autocomplete="false">
+    <button>GET EXCHANGE RATE</button>
+</form>
+<h2>1 {{fromcoin}} is equal to {{rate}} {{tocoin}}</h2>
+{% endblock %}

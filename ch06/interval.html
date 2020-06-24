@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			setInterval(count, 1000); //每1000毫秒执行一次count函数
+		});
+
+		let counter = 0;
+
+		function count(){
+			counter++;
+			document.querySelector('#counter1').innerHTML = counter;
+		}
+	</script>
+	<title>My website</title>
+</head>
+<body>
+	<h1 id="counter1">0</h1>
+</body>
+</html>
