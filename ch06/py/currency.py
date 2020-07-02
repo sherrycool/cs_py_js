@@ -19,9 +19,16 @@ def main():
         raise Exception("ERROR: API request unsuccessful.")
 
     data = res.json()
-    rate = data['newslist'][0]['money']
     print(data)
-    print(f"1 {fromcoin} is equal to {rate} {tocoin}")
+    try:
+        rate = data['newslist'][0]['money']
+        print(f"1 {fromcoin} is equal to {rate} {tocoin}")
+    except:
+        print("Error!")
+    #if data['msg'] != '数据返回为空':
+        
+        
+    
 
 
 if __name__ == "__main__":

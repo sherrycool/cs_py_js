@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		request.onload = () =>{
 
 			//extract json data from requrest
-			const data = JSON.parse(requrest.responseText);
+			const data = JSON.parse(request.responseText);
 
 			// update the result div
 			if (data.success) {
 				const contents = `1 CNY is equal to ${data.rate} ${currency}`;
-				document.querySelector('#result').innerHTML = content;
+				document.querySelector('#result').innerHTML = contents;
 			}
 			else {
 				document.querySelector('#result').innerHTML = 'THere was an error.';

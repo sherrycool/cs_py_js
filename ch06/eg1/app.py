@@ -22,15 +22,23 @@ def convert():
     # make sure request succeeded
     if res.status_code != 200:
         # raise Exception("ERROR: API request unsuccessful.")
-        return jsonify({"success", False})
+        return jsonify({"success": False})
 
     # make sure currency is in response rate = data['newslist'][0]['money']
     # {'code': 200, 'msg': 'success', 'newslist': [{'money': '0.0652'}]}
     data = res.json()
-    if data['newslist'][0]['money'] is None:
-    	return jsonify({"success", False})
-
-    return jsonify({"success": True, 'rate':data['newslist'][0]['money']})
+    '''
+    if data['msg'] == '数据返回为空':
+        return jsonify({"success", False})
+    else:
+        rate = data['newslist'][0]['money']
+        return jsonify({"success": True, 'rate':data['newslist'][0]['money']})
+    '''
+    try:
+        rate = data['newslist'][0]['money']
+        return jsonify({"success": True, 'rate':data['newslist'][0]['money']})
+    except:
+        return jsonify({"success": False})
 
 
 def main():
