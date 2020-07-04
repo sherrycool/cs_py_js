@@ -1,24 +1,20 @@
 {% extends "layout.html" %}
 {% block title %}
-	Success
+Passengers
 {% endblock %}
 
-<!--flight=flight, passengers=passengers-->
 {% block body %}
-	<h1>Flight Details</h1>
 
+	<h1>Flight Info</h1>
 	<ul>
-		<li>Origin: {{ flight.origin }}</li>
-		<li>Destination: {{ flight.destination }}</li>
-		<li>Duration: {{ flight.duration }} minutes</li>
-	</ul>	
-
-	<h1>Passengers</h1>
-	<ul>
+		<li>Flight origin: {{ flight.origin }}</li>
+		<li>Flight destination: {{ flight.destination }}</li>
+		<li>Flight duration: {{ flight.duration }} minutes</li>
+	</ul>
+	<h1>Passenger Info</h1>
+		<ul>
 		{% for passenger in passengers %}
 			<li>{{ passenger.name }}</li>
-		{% else %}
-			<li>No passengers.</li>
 		{% endfor %}
-	</ul>
+		</ul>
 {% endblock %}
